@@ -1,46 +1,79 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs,
-  FaGitAlt, FaDocker, FaAws, FaPython, FaJava, FaPhp
-} from 'react-icons/fa';
-import { SiTypescript, SiMongodb, SiPostgresql, SiMysql, SiRedux, SiNextdotjs } from 'react-icons/si';
-import './Skills.css';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaDocker,
+  FaAws,
+  FaPython,
+  FaJava,
+  FaPhp,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiC,
+  SiCplusplus,
+  SiExpress,
+  SiRedux,
+  SiNextdotjs,
+} from "react-icons/si";
+import "./Skills.css";
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend Development",
       skills: [
+        { name: "C", icon: <SiC />, level: 85, color: "#A8B9CC" },
+        { name: "C++", icon: <SiCplusplus />, level: 82, color: "#00599C" },
         { name: "HTML5", icon: <FaHtml5 />, level: 95, color: "#E34F26" },
         { name: "CSS3", icon: <FaCss3Alt />, level: 90, color: "#1572B6" },
         { name: "JavaScript", icon: <FaJs />, level: 88, color: "#F7DF1E" },
-        { name: "TypeScript", icon: <SiTypescript />, level: 85, color: "#3178C6" },
+        // { name: "TypeScript", icon: <SiTypescript />, level: 85, color: "#3178C6" },
         { name: "React", icon: <FaReact />, level: 92, color: "#61DAFB" },
-        { name: "Redux", icon: <SiRedux />, level: 80, color: "#764ABC" },
-        { name: "Next.js", icon: <SiNextdotjs />, level: 85, color: "#000000" }
-      ]
+
+        // { name: "Redux", icon: <SiRedux />, level: 80, color: "#764ABC" },
+        // { name: "Next.js", icon: <SiNextdotjs />, level: 85, color: "#000000" },
+      ],
     },
     {
       title: "Backend Development",
       skills: [
         { name: "Node.js", icon: <FaNodeJs />, level: 88, color: "#339933" },
-        { name: "Python", icon: <FaPython />, level: 85, color: "#3776AB" },
-        { name: "Java", icon: <FaJava />, level: 80, color: "#ED8B00" },
-        { name: "PHP", icon: <FaPhp />, level: 75, color: "#777BB4" }
-      ]
+        { name: "Python", icon: <FaPython />, level: 40, color: "#3776AB" },
+        {
+          name: "Express.js",
+          icon: <SiExpress />,
+          level: 80,
+          color: "#000000",
+        },
+        { name: "Java", icon: <FaJava />, level: 70, color: "#ED8B00" },
+        // { name: "PHP", icon: <FaPhp />, level: 75, color: "#777BB4" },
+      ],
     },
     {
       title: "Database & Tools",
       skills: [
         { name: "MongoDB", icon: <SiMongodb />, level: 85, color: "#47A248" },
-        { name: "PostgreSQL", icon: <SiPostgresql />, level: 80, color: "#336791" },
+        // {
+        //   name: "PostgreSQL",
+        //   icon: <SiPostgresql />,
+        //   level: 80,
+        //   color: "#336791",
+        // },
         { name: "MySQL", icon: <SiMysql />, level: 82, color: "#4479A1" },
-        { name: "Git", icon: <FaGitAlt />, level: 90, color: "#F05032" },
+        { name: "Git", icon: <FaGitAlt />, level: 75, color: "#F05032" },
         { name: "Docker", icon: <FaDocker />, level: 75, color: "#2496ED" },
-        { name: "AWS", icon: <FaAws />, level: 70, color: "#FF9900" }
-      ]
-    }
+        { name: "AWS", icon: <FaAws />, level: 30, color: "#FF9900" },
+      ],
+    },
   ];
 
   return (
@@ -80,7 +113,10 @@ const Skills = () => {
                     viewport={{ once: true }}
                   >
                     <div className="skill-header">
-                      <div className="skill-icon" style={{ color: skill.color }}>
+                      <div
+                        className="skill-icon"
+                        style={{ color: skill.color }}
+                      >
                         {skill.icon}
                       </div>
                       <div className="skill-info">
@@ -89,11 +125,11 @@ const Skills = () => {
                       </div>
                     </div>
                     <div className="skill-progress">
-                      <div 
+                      <div
                         className="skill-progress-bar"
-                        style={{ 
+                        style={{
                           width: `${skill.level}%`,
-                          backgroundColor: skill.color
+                          backgroundColor: skill.color,
                         }}
                       ></div>
                     </div>
@@ -114,16 +150,11 @@ const Skills = () => {
           <h3>Additional Skills</h3>
           <div className="skills-tags">
             <span className="skill-tag">RESTful APIs</span>
-            <span className="skill-tag">GraphQL</span>
-            <span className="skill-tag">Jest</span>
-            <span className="skill-tag">Cypress</span>
-            <span className="skill-tag">Webpack</span>
-            <span className="skill-tag">Babel</span>
-            <span className="skill-tag">Sass/SCSS</span>
+
             <span className="skill-tag">Tailwind CSS</span>
             <span className="skill-tag">Material-UI</span>
-            <span className="skill-tag">Figma</span>
-            <span className="skill-tag">Agile/Scrum</span>
+
+            <span className="skill-tag">Firebase</span>
             <span className="skill-tag">CI/CD</span>
           </div>
         </motion.div>
@@ -132,4 +163,4 @@ const Skills = () => {
   );
 };
 
-export default Skills; 
+export default Skills;

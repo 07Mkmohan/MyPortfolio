@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaBriefcase, FaGraduationCap, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
-import './Experience.css';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaBriefcase,
+  FaGraduationCap,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import "./Experience.css";
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState('work');
+  const [activeTab, setActiveTab] = useState("work");
 
   const workExperience = [
     {
@@ -13,27 +18,24 @@ const Experience = () => {
       company: "Tech Solutions Inc.",
       period: "2022 - Present",
       location: "San Francisco, CA",
-      description: "Leading development of enterprise web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
+      description:
+        "Leading development of enterprise web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
       technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB"],
       achievements: [
         "Reduced application load time by 40% through optimization",
         "Led a team of 5 developers on a major project",
-        "Implemented CI/CD pipeline reducing deployment time by 60%"
-      ]
+        "Implemented CI/CD pipeline reducing deployment time by 60%",
+      ],
     },
     {
       id: 2,
       title: "Full Stack Developer",
-      company: "Digital Innovations",
+      Project: "Proyecta Minds",
       period: "2020 - 2022",
       location: "New York, NY",
-      description: "Developed and maintained multiple web applications. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Docker"],
-      achievements: [
-        "Built 3 major client applications from scratch",
-        "Improved code quality by implementing testing standards",
-        "Reduced bug reports by 30% through better error handling"
-      ]
+      description:
+        "- Developed Proyecta Minds, a web-based project management platform for college students combining features of Trello and Jira to facilitate collaboration. using the MERN stack and Docker, featuring task management and collaboration tools. Integrated an in-browser code editor supporting multiple languages (C, C++, Java, Python, PHP, JavaScript) and a collaboration request feature to enhance teamwork and productivity.",
+      technologies: ["React", "Node.js", "Mongodb", "Express.js", "Docker"],
     },
     {
       id: 3,
@@ -41,43 +43,38 @@ const Experience = () => {
       company: "WebTech Solutions",
       period: "2019 - 2020",
       location: "Austin, TX",
-      description: "Focused on creating responsive and user-friendly interfaces. Worked closely with designers to implement pixel-perfect designs.",
-      technologies: ["React", "JavaScript", "CSS3", "HTML5"],
+      description:
+        "Created and maintained websites using HTML, CSS, and JavaScript. The website which provides the cyber attack related Information. In this i Worked with real time cyber-attack to understand threats and deliver custom solutions to that problem.",
+      technologies: ["HTML", "JavaScript", "CSS3", "HTML5"],
       achievements: [
         "Developed 10+ responsive websites",
         "Improved user experience scores by 25%",
-        "Optimized website performance and accessibility"
-      ]
-    }
+        "Optimized website performance and accessibility",
+      ],
+    },
   ];
 
   const education = [
     {
       id: 1,
-      degree: "Master of Computer Science",
-      school: "Stanford University",
-      period: "2017 - 2019",
-      location: "Stanford, CA",
-      description: "Specialized in Software Engineering and Web Technologies. Graduated with honors.",
-      achievements: [
-        "GPA: 3.8/4.0",
-        "Thesis: 'Modern Web Application Architecture'",
-        "Teaching Assistant for Web Development course"
-      ]
+      degree: "12th",
+      school: "BRPU Athani",
+      period: "2018 - 2020",
+      location: "Athani , Karnataka",
+
+      achievements: ["Pecentage: 87%"],
     },
     {
       id: 2,
       degree: "Bachelor of Computer Science",
-      school: "University of California",
-      period: "2013 - 2017",
-      location: "Berkeley, CA",
-      description: "Major in Computer Science with focus on Software Engineering and Database Systems.",
-      achievements: [
-        "GPA: 3.7/4.0",
-        "Dean's List: 3 years",
-        "President of Computer Science Club"
-      ]
-    }
+      school:
+        "D.Y.Patil College Of Engineering And Technology, Kasaba Bawada Kolhapur",
+      period: "2021 - 2025",
+      location: "Kolhapur, Maharashtra",
+      description:
+        "Major in Computer Science with focus on Software Engineering and Database Systems.",
+      achievements: ["GPA: 8.9/10"],
+    },
   ];
 
   return (
@@ -103,21 +100,21 @@ const Experience = () => {
           viewport={{ once: true }}
         >
           <button
-            className={`tab-btn ${activeTab === 'work' ? 'active' : ''}`}
-            onClick={() => setActiveTab('work')}
+            className={`tab-btn ${activeTab === "work" ? "active" : ""}`}
+            onClick={() => setActiveTab("work")}
           >
             <FaBriefcase /> Work Experience
           </button>
           <button
-            className={`tab-btn ${activeTab === 'education' ? 'active' : ''}`}
-            onClick={() => setActiveTab('education')}
+            className={`tab-btn ${activeTab === "education" ? "active" : ""}`}
+            onClick={() => setActiveTab("education")}
           >
             <FaGraduationCap /> Education
           </button>
         </motion.div>
 
         <div className="timeline-container">
-          {activeTab === 'work' ? (
+          {activeTab === "work" ? (
             <div className="timeline">
               {workExperience.map((job, index) => (
                 <motion.div
@@ -134,14 +131,18 @@ const Experience = () => {
                       <div className="timeline-meta">
                         <span className="company">{job.company}</span>
                         <div className="timeline-details">
-                          <span><FaCalendarAlt /> {job.period}</span>
-                          <span><FaMapMarkerAlt /> {job.location}</span>
+                          <span>
+                            <FaCalendarAlt /> {job.period}
+                          </span>
+                          <span>
+                            <FaMapMarkerAlt /> {job.location}
+                          </span>
                         </div>
                       </div>
                     </div>
-                    
+
                     <p className="timeline-description">{job.description}</p>
-                    
+
                     <div className="timeline-technologies">
                       {job.technologies.map((tech, techIndex) => (
                         <span key={techIndex} className="tech-tag">
@@ -149,13 +150,15 @@ const Experience = () => {
                         </span>
                       ))}
                     </div>
-                    
+
                     <div className="timeline-achievements">
                       <h4>Key Achievements:</h4>
                       <ul>
-                        {job.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex}>{achievement}</li>
-                        ))}
+                        {job.achievements.map(
+                          (achievement, achievementIndex) => (
+                            <li key={achievementIndex}>{achievement}</li>
+                          )
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -179,20 +182,26 @@ const Experience = () => {
                       <div className="timeline-meta">
                         <span className="company">{edu.school}</span>
                         <div className="timeline-details">
-                          <span><FaCalendarAlt /> {edu.period}</span>
-                          <span><FaMapMarkerAlt /> {edu.location}</span>
+                          <span>
+                            <FaCalendarAlt /> {edu.period}
+                          </span>
+                          <span>
+                            <FaMapMarkerAlt /> {edu.location}
+                          </span>
                         </div>
                       </div>
                     </div>
-                    
+
                     <p className="timeline-description">{edu.description}</p>
-                    
+
                     <div className="timeline-achievements">
                       <h4>Key Achievements:</h4>
                       <ul>
-                        {edu.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex}>{achievement}</li>
-                        ))}
+                        {edu.achievements.map(
+                          (achievement, achievementIndex) => (
+                            <li key={achievementIndex}>{achievement}</li>
+                          )
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -206,4 +215,4 @@ const Experience = () => {
   );
 };
 
-export default Experience; 
+export default Experience;

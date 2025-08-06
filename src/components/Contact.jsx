@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import './Contact.css';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
+import "./Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,22 +23,22 @@ const Contact = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
       // Reset status after 3 seconds
       setTimeout(() => setSubmitStatus(null), 3000);
     }, 1500);
@@ -41,21 +48,21 @@ const Contact = () => {
     {
       icon: <FaEnvelope />,
       title: "Email",
-      value: "your.email@example.com",
-      link: "mailto:your.email@example.com"
+      value: "chhaparimk162511@gmail.com",
+      link: "mailto:your.email@example.com",
     },
     {
       icon: <FaPhone />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "8767243915",
+      link: "tel:+15551234567",
     },
     {
       icon: <FaMapMarkerAlt />,
       title: "Location",
-      value: "San Francisco, CA",
-      link: null
-    }
+      value: "Kolhapur , Maharashtra",
+      link: null,
+    },
   ];
 
   const socialLinks = [
@@ -63,20 +70,20 @@ const Contact = () => {
       icon: <FaGithub />,
       name: "GitHub",
       url: "https://github.com",
-      color: "#333"
+      color: "#333",
     },
     {
       icon: <FaLinkedin />,
       name: "LinkedIn",
       url: "https://linkedin.com",
-      color: "#0077B5"
+      color: "#0077B5",
     },
     {
       icon: <FaTwitter />,
       name: "Twitter",
       url: "https://twitter.com",
-      color: "#1DA1F2"
-    }
+      color: "#1DA1F2",
+    },
   ];
 
   return (
@@ -90,7 +97,8 @@ const Contact = () => {
         >
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-subtitle">
-            I'm always open to discussing new opportunities, interesting projects, or creative ideas.
+            I'm always open to discussing new opportunities, interesting
+            projects, or creative ideas.
           </p>
         </motion.div>
 
@@ -104,16 +112,14 @@ const Contact = () => {
           >
             <h3>Let's Connect</h3>
             <p>
-              Feel free to reach out if you'd like to collaborate on a project, 
+              Feel free to reach out if you'd like to collaborate on a project,
               discuss potential opportunities, or just want to say hello!
             </p>
 
             <div className="contact-details">
               {contactInfo.map((info, index) => (
                 <div key={index} className="contact-item">
-                  <div className="contact-icon">
-                    {info.icon}
-                  </div>
+                  <div className="contact-icon">{info.icon}</div>
                   <div className="contact-text">
                     <h4>{info.title}</h4>
                     {info.link ? (
@@ -136,7 +142,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-icon"
-                    style={{ '--social-color': social.color }}
+                    style={{ "--social-color": social.color }}
                   >
                     {social.icon}
                   </a>
@@ -207,13 +213,13 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className={`btn btn-primary ${isSubmitting ? 'loading' : ''}`}
+                className={`btn btn-primary ${isSubmitting ? "loading" : ""}`}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
 
-              {submitStatus === 'success' && (
+              {submitStatus === "success" && (
                 <motion.div
                   className="success-message"
                   initial={{ opacity: 0, y: 10 }}
@@ -230,4 +236,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

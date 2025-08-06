@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import './Header.css';
+import React, { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,8 +11,8 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {
@@ -22,27 +22,43 @@ const Header = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
   };
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <div className="header-content">
           <div className="logo">
             <h2>Portfolio</h2>
           </div>
-          
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+
+          <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
             <ul className="nav-list">
-              <li><button onClick={() => scrollToSection('home')}>Home</button></li>
-              <li><button onClick={() => scrollToSection('about')}>About</button></li>
-              <li><button onClick={() => scrollToSection('skills')}>Skills</button></li>
-              <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
-              <li><button onClick={() => scrollToSection('experience')}>Experience</button></li>
-              <li><button onClick={() => scrollToSection('contact')}>Contact</button></li>
+              <li>
+                <button onClick={() => scrollToSection("home")}>Home</button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("about")}>About</button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("skills")}>
+                  Skills
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("projects")}>
+                  Projects
+                </button>
+              </li>
+              {/* <li><button onClick={() => scrollToSection('experience')}>Experience</button></li> */}
+              <li>
+                <button onClick={() => scrollToSection("contact")}>
+                  Contact
+                </button>
+              </li>
             </ul>
           </nav>
 
@@ -55,4 +71,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;
