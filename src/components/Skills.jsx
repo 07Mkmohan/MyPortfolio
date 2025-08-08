@@ -31,13 +31,13 @@ const Skills = () => {
     {
       title: "Frontend Development",
       skills: [
-        { name: "C", icon: <SiC />, level: 85, color: "#A8B9CC" },
-        { name: "C++", icon: <SiCplusplus />, level: 82, color: "#00599C" },
-        { name: "HTML5", icon: <FaHtml5 />, level: 95, color: "#E34F26" },
-        { name: "CSS3", icon: <FaCss3Alt />, level: 90, color: "#1572B6" },
-        { name: "JavaScript", icon: <FaJs />, level: 88, color: "#F7DF1E" },
+        { name: "C", icon: <SiC />, color: "#A8B9CC" },
+        { name: "C++", icon: <SiCplusplus />, color: "#00599C" },
+        { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26" },
+        { name: "CSS3", icon: <FaCss3Alt />, color: "#1572B6" },
+        { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E" },
         // { name: "TypeScript", icon: <SiTypescript />, level: 85, color: "#3178C6" },
-        { name: "React", icon: <FaReact />, level: 92, color: "#61DAFB" },
+        { name: "React", icon: <FaReact />, color: "#61DAFB" },
 
         // { name: "Redux", icon: <SiRedux />, level: 80, color: "#764ABC" },
         // { name: "Next.js", icon: <SiNextdotjs />, level: 85, color: "#000000" },
@@ -46,32 +46,32 @@ const Skills = () => {
     {
       title: "Backend Development",
       skills: [
-        { name: "Node.js", icon: <FaNodeJs />, level: 88, color: "#339933" },
-        { name: "Python", icon: <FaPython />, level: 40, color: "#3776AB" },
+        { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
+        { name: "Python", icon: <FaPython />, color: "#3776AB" },
         {
           name: "Express.js",
           icon: <SiExpress />,
-          level: 80,
+
           color: "#000000",
         },
-        { name: "Java", icon: <FaJava />, level: 70, color: "#ED8B00" },
+        { name: "Java", icon: <FaJava />, color: "#ED8B00" },
         // { name: "PHP", icon: <FaPhp />, level: 75, color: "#777BB4" },
       ],
     },
     {
       title: "Database & Tools",
       skills: [
-        { name: "MongoDB", icon: <SiMongodb />, level: 85, color: "#47A248" },
+        { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
         // {
         //   name: "PostgreSQL",
         //   icon: <SiPostgresql />,
         //   level: 80,
         //   color: "#336791",
         // },
-        { name: "MySQL", icon: <SiMysql />, level: 82, color: "#4479A1" },
-        { name: "Git", icon: <FaGitAlt />, level: 75, color: "#F05032" },
-        { name: "Docker", icon: <FaDocker />, level: 75, color: "#2496ED" },
-        { name: "AWS", icon: <FaAws />, level: 30, color: "#FF9900" },
+        { name: "MySQL", icon: <SiMysql />, color: "#4479A1" },
+        { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
+        { name: "Docker", icon: <FaDocker />, color: "#2496ED" },
+        // { name: "AWS", icon: <FaAws />, color: "#FF9900" },
       ],
     },
   ];
@@ -121,10 +121,10 @@ const Skills = () => {
                       </div>
                       <div className="skill-info">
                         <h4>{skill.name}</h4>
-                        <span className="skill-level">{skill.level}%</span>
+                        <span className="skill-level">{skill.level}</span>
                       </div>
                     </div>
-                    <div className="skill-progress">
+                    {/* <div className="skill-progress">
                       <div
                         className="skill-progress-bar"
                         style={{
@@ -132,7 +132,7 @@ const Skills = () => {
                           backgroundColor: skill.color,
                         }}
                       ></div>
-                    </div>
+                    </div> */}
                   </motion.div>
                 ))}
               </div>
@@ -153,7 +153,7 @@ const Skills = () => {
 
             <span className="skill-tag">Tailwind CSS</span>
             <span className="skill-tag">Material-UI</span>
-
+            <span className="skill-tag">Google Cloud</span>
             <span className="skill-tag">Firebase</span>
             <span className="skill-tag">CI/CD</span>
           </div>

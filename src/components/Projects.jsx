@@ -16,7 +16,8 @@ import {
 import "./Projects.css";
 import proyecta from "../assets/ProyectaMinds.png";
 import scamshield from "../assets/scam.png";
-
+import portfolio from "../assets/portfolio.png";
+import task from "../assets/task.png";
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -30,7 +31,7 @@ const Projects = () => {
       technologies: ["React", "Node.js", "MongoDB", "Express.js", "Docker"],
       icons: [<FaReact />, <FaNodeJs />, <FaDatabase />],
       category: "fullstack",
-      github: "https://github.com",
+      github: "https://github.com/07Mkmohan/ProyectaMinds",
       live: "https://example.com",
       featured: true,
     },
@@ -39,11 +40,11 @@ const Projects = () => {
       title: "Task Management App",
       description:
         "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "https://picsum.photos/400/250?random=2",
+      image: task,
       technologies: ["React", "TypeScript", "Node.js", "Socket.io"],
       icons: [<FaReact />, <SiTypescript />, <FaNodeJs />],
       category: "fullstack",
-      github: "https://github.com",
+      github: "https://github.com/07Mkmohan/Task-Management",
       live: "https://example.com",
       featured: true,
     },
@@ -52,11 +53,11 @@ const Projects = () => {
       title: "Portfolio Website",
       description:
         "A modern, responsive portfolio website built with React and Framer Motion for smooth animations and interactions.",
-      image: "https://picsum.photos/400/250?random=3",
+      image: portfolio,
       technologies: ["React", "Framer Motion", "CSS3"],
       icons: [<FaReact />],
       category: "frontend",
-      github: "https://github.com",
+      github: "hhttps://github.com/07Mkmohan/MyPortfolio.git",
       live: "https://example.com",
       featured: false,
     },

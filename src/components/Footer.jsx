@@ -75,10 +75,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>
-            © {currentYear} Mohan. All rights reserved. Made with{" "}
-            <FaHeart className="heart" /> using React.
-          </p>
+          <p>© {currentYear} Mohan. All rights reserved.</p>
         </div>
       </div>
     </footer>
