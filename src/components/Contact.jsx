@@ -33,15 +33,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      const response = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-      // Reset status after 3 seconds
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 3000);
-    }, 1500);
+    }
   };
 
   const contactInfo = [
@@ -49,13 +62,13 @@ const Contact = () => {
       icon: <FaEnvelope />,
       title: "Email",
       value: "chhaparimk162511@gmail.com",
-      link: "mailto:your.email@example.com",
+      link: "mailto:chhaparimk162511@gmail.com",
     },
     {
       icon: <FaPhone />,
       title: "Phone",
       value: "8767243915",
-      link: "tel:+15551234567",
+      link: "tel:8767243915",
     },
     {
       icon: <FaMapMarkerAlt />,
@@ -69,13 +82,13 @@ const Contact = () => {
     {
       icon: <FaGithub />,
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/07Mkmohan",
       color: "#333",
     },
     {
       icon: <FaLinkedin />,
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/mohan-chhapari-6445a4230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       color: "#0077B5",
     },
     {
