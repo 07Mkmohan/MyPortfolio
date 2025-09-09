@@ -18,6 +18,8 @@ import proyecta from "../assets/ProyectaMinds.png";
 import scamshield from "../assets/scam.png";
 import portfolio from "../assets/portfolio.png";
 import task from "../assets/task.png";
+import multi from "../assets/multiplatform.png";
+
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -35,8 +37,30 @@ const Projects = () => {
       live: "https://example.com",
       featured: true,
     },
+
     {
       id: 2,
+      title: "MultiPlatform",
+      description:
+        "Developed a full-stack web platform (ReactJS, Spring Boot, MySQL) for managing internships, jobs, and courses with role-based authentication, profile management, postings, enrollment, application tracking, and system analytics.",
+      image: multi,
+      technologies: [
+        "React",
+        "JavaScript",
+        "Node.js",
+        "Socket.io",
+        "SpringBoot",
+        "MySQL",
+      ],
+      icons: [<FaReact />, <FaDatabase />, <FaNodeJs />],
+      category: "fullstack",
+      github: "https://github.com/07Mkmohan/MultiPlatform.git",
+      live: "https://example.com",
+      featured: true,
+    },
+
+    {
+      id: 3,
       title: "Task Management App",
       description:
         "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
@@ -49,7 +73,7 @@ const Projects = () => {
       featured: true,
     },
     {
-      id: 3,
+      id: 4,
       title: "Portfolio Website",
       description:
         "A modern, responsive portfolio website built with React and Framer Motion for smooth animations and interactions.",
@@ -58,11 +82,11 @@ const Projects = () => {
       icons: [<FaReact />],
       category: "frontend",
       github: "hhttps://github.com/07Mkmohan/MyPortfolio.git",
-      live: "https://example.com",
+      live: "https://mohan-portfolio-self.vercel.app/",
       featured: false,
     },
     {
-      id: 4,
+      id: 5,
       title: "ScamShield",
       description:
         "Created and maintained websites using HTML, CSS, and JavaScript. The website which provides the cyber attack related Information. In this i Worked with real time cyber-attack to understand threats and deliver custom solutions to that problem.",
